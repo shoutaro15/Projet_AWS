@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    	<title>Post-it</title>
+    	<link rel="stylesheet" type="text/css" href="/css/index.css">
+    	<link rel="icon" type="image/x-icon" href="/resources/post-it.png">
+    </head>
+    <body>
+        <div id="top">
+            <nav>
+    			<ul>
+    			<li id="left_nav">
+    			    <p id={{ nom_user }} class="user">Bienvenue {{ nom_user}}</p>
+    			</li>
+				<li>
+					{% if nom_user == "visiteur" %}
+					<a href="/signin" id="signin-bt">Connexion</a>
+					{% else %}
+					<a href="/logout" id="signin-bt">Déconnexion</a>
+					{% endif %}
+				</li>
+				<li>
+				    {% if nom_user == "visiteur" %}
+				    <a href="/signup" id="signup-bt">Inscription</a>
+					{% endif %}
+				</li>
+				<li>
+                    <form method="POST" action="traitement.php">
+
+                    Tableau Post-it
+                    <select name="list_postit" >
+                        <optgroup label="Modification">
+                            <option value="creation" onclick="CreationTab(this)">Créer un tableau</option>
+                            <option value="supprimer" onclick="SuppressionTab(this)">Supprimer un tableau</option>
+                        </optgroup>
+                        <optgroup label="Sélection d'un tableau" class="list_postit">
+                            {% for u in tab %}
+                            <option value="{{ u.nom }}" class="list_tab" onclick="Ouverture(this)">{{ u.nom }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    </select>
+                    </form>
+                </li>
+    			</ul>
+            </nav>
+        </div>
+        
+        <div id="conteneur" ondrop="drop(event)" ondragover="allowDrop(event)">
+            {% for u in post %}
+            
+            <div class="flex-conteneur" id="{{ u.id }}" style="position: absolute; left: {{ u.x }}px; top: {{ u.y }}px; z-index:{{u.z}}"  draggable="true" ondragstart="drag(event)" >
+                <img src="/resources/bouton_fermer.gif" class="fermer" alt="Bouton supprimer" title="Supprimer ce post-it" onclick="supprimer(this)"/>
+                
+                <div class="text_postit" onclick="modify(this)">
+                    {{ u.champ|escape }}
+                </div>
+                
+                <span class="date">{{ u.date_creation }}</span>
+              
+                <span class="auteur">
+                    {{ u.auteur|upper }}
+                </span>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </body>
+    
+    {% block javascripts %}
+        <script src="/s/even.js"></script>
+    {% endblock %}
+</html>

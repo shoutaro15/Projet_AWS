@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="/css/login_inscription.css">
+        <link rel="icon" type="image/x-icon" href="/resources/post-it.png">
+        <title>Post-it - Connexion</title>
+    </head>
+    <body>
+        <div>
+            <h1>Connexion</h1>
+
+            <form action="/signin" method="POST">
+                Nom d'utilisateur
+                <input type="text" name="login" required>
+                Mot de passe
+                <input type="password" name="pass" maxlength="6" required>
+                <input type="submit" value="Connexion">
+                
+                <a href="/">Annuler</a>
+                <p id="message">{{ message }}</p>
+            </form>
+        </div>
+    </body>
+</html>

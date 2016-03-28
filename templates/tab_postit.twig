@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    	<title>Post-it</title>
+    	<link rel="stylesheet" type="text/css" href="/css/index.css">
+    	<link rel="icon" type="image/x-icon" href="/resources/post-it.png">
+    </head>
+    <body id="page">
+        <div id="boutons">
+            <nav>
+    			<ul>
+				<li>
+					<a href="/logout" id="signin-bt">Deconnexion</a>
+				</li>
+				<li>
+					<a href="/administration" id="signup-bt">Admistration</a>
+				</li>
+					<li>
+    			      <form method="post" action="traitement.php">
+               <label for="list_postit">List de Tableaux de post-it</label><br />
+               <select name="list_postit" id="list_postit">
+                    <option value="creation" onclick="CreationTab(this)">creation</option>
+                     <option value="supprimer" onclick="SuppressionTab(this)">supprimer</option>
+                    {% for u in tab %}	
+                    <option value="{{u.Nom}}" class="list_tab" onclick="Ouverture(this)">{{u.Nom}}</option>
+            {% endfor %}
+               </select>
+                    </form>
+                </li>
+    			</ul>
+            </nav>
+        </div>
+       
+         
+             
+        <div id="conteneur" ondrop="drop(event)" ondragover="allowDrop(event)">
+            {% for u in post %}	
+            
+            <div class="flex-conteneur" id="{{ u.id }}" style="position:absolute; left: {{ u.x }}px; top: {{ u.y }}px; " draggable="true"  ondragstart="drag(event)">
+                <img src="/resources/bouton_fermer.gif" class="fermer" alt="fermer" />
+                
+                <div class="text_postit" >
+                    {{ u.champ }}
+                </div>
+                
+              <span class="date">{{ u.date_creation }}</span>
+              
+              <span class="auteur">  
+                  {% filter upper %}
+                  {{ u.auteur }}
+                  {% endfilter %}
+              </span>
+        
+            </div>
+            
+            {% endfor %}
+        </div>
+    </body>
+    
+    {% block javascripts %}
+        <script src="/s/test.js"></script>
+    {% endblock %}
+</html>

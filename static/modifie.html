@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Post-it - Modification</title>
+        <script src="text.js"></script>
+        <style>
+            textarea {
+                resize: none;
+            }
+        </style>
+    </head>
+    <body onload="transfertText(this)">
+        <form method="POST" action="/modifier" >
+            <p>Modifiez votre texte ici</p>
+            <textarea name="champ" id="champ" rows="10" cols="70" placeholder="Insérez votre texte ici"></textarea>
+            <input type="hidden" value="0" name="val" id="val">
+            <input type="hidden" value="0" name="auteur" id="auteur">
+            <input type="hidden" value="0" name="z" id="z">
+            <input type="submit" value="Modifier" onclick="transfertOui()">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+.flex-conteneur {
+    display: flex;  
+    flex-flow: row wrap;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    justify-content: space-around;
+    color: black; /* Couleur texte */
+    margin: 0 auto;
+    font-size: 20px;
+    box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3); /* Ombre post-it */
+    background: #eae672; /* Couleur fond post-it */
+    transform: rotate(2deg);
+    min-height: 150px;
+    min-width: 200px;
+}
+
+.fermer:hover {
+    opacity: .4;
+}
+
+.fermer {
+    display: block;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.auteur { 
+    order: 1;
+    display: block;
+    font-family: "Trebuchet MS", Trebuchet, sans-serif;
+    font-style: italic;
+    text-align: right;
+}
+
+.text_postit {
+    order: 0;
+    font-family: "Consolas", monospace;
+}
+
+.date { 
+    order: 2;
+    font-family: "Consolas", monospace;
+    text-align: right;
+}
+
+/* TOPBAR */
+
+nav {
+    font-family: "Trebuchet MS", Trebuchet, sans-serif;
+	font-weight: bold;
+	height: 40px;
+	line-height: 30px;
+	right: 0;
+}
+
+#top {
+    clear: both;
+}
+
+#left_nav {
+    padding: 0 1.5em;
+    background-color: #3F51B5;
+	color: #EEEEEE;
+    float: left;
+}
+
+nav li {
+    margin-left: 5px;
+    list-style: none;
+	float: right;
+}
+
+nav li form {
+    line-height: 40px;
+}
+
+.user {
+    display: inline;
+    line-height: 40px;
+}
+
+nav a:link, nav a:visited {
+    text-transform: uppercase;
+	color: #212121;
+	border: 2px solid #3F51B5;
+	line-height: 26px;
+	display: inline-block;
+	padding: 5px 1.5em;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #3F51B5;
+	color: #EEEEEE;
+}
+
+nav a:active {
+    border: 2px solid #283593;
+    background-color: #283593;
+    color: #EEEEEE;
+}
+
+/* ############## */
+
+body {
+    overflow: hidden;
+}
+
+#conteneur {
+    height: 1000px;
+    width: 1500px;
+}

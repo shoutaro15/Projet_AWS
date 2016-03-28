@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="/css/message.css">
+        <link rel="icon" type="image/x-icon" href="/resources/post-it.png">
+        <title>Post-it - Message</title>
+    </head>
+    <body>
+        <div align="center" id="conteneur">
+        	<p>{{ message }}</p>
+        </div>
+        
+        {% block javascripts %}
+            <script> setInterval(function(){window.close()}, 2000);</script>
+        {% endblock %}
+    </body>
+</html>

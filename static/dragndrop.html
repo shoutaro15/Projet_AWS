@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Post-it - Placement</title>
+        <script src="text.js"></script>
+    </head>
+    <body>
+        <form method="POST" action="/dragndrop">
+            <p>Voulez-vous placer ce post-it ici ?</p>
+            <input type="hidden" value="0" name="x" id="x">
+            <input type="hidden" value="0" name="y" id="y">
+            <input type="hidden" value="0" name="z" id="z">
+            <input type="hidden" value="0" name="postit" id="postit">
+            <input type="submit" value="Oui" name="oui" onclick="transfertOui1()"/>
+            <input type="submit" value="Non" name="non" onclick="transfertNon1()"/>
+        </form>
+    </body>
+</html>

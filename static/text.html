@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Post-it - Insertion</title>
+        <script src="text.js"></script>
+        <style>
+            textarea {
+                resize: none;
+            }
+        </style>
+    </head>
+    <body >
+        <form method="POST" action="/ajouter">
+            <textarea name="champ" id="champ" rows="10" cols="70" placeholder="Insérez votre texte ici"></textarea>
+            <input type="hidden" value="0" name="x" id="x">
+            <input type="hidden" value="0" name="y" id="y">
+             <input type="hidden" value="0" name="z" id="z">
+            <input type="hidden" value="0" name="tab" id="tab">
+            <input type="submit" value="Envoyer" onclick="transfert()">
+        </form>
+    </body>
+</html>

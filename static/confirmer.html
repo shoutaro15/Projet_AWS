@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Post-it - Suppression</title>
+    </head>
+    <body>
+        <form method="POST" action="/effacer">
+            <p>Voulez-vous supprimer ce post-it ?</p>
+            <input type="submit" value="Oui" name="oui" onclick="transfertOui()">
+            <input type="submit" value="Non" name="non" onclick="transfertNon()">
+            <input type="hidden" value="0" name="val" id ="val">
+        </form>
+        <script src="text.js"></script>
+    </body>
+</html>

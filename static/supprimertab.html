@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Post-it - Suppression d'un tableau</title>
+    </head>
+    <body>
+        <form method="POST" action="/effacerTab">
+            <p>Entrez le nom du tableau que vous voulez supprimer</p>
+            <input type="text" value="0" name="tab" id="tab"><br><br>
+            <input type="submit" value="Supprimer" name="oui" onclick="transfertOuiTab()">
+            <input type="submit" value="Annuler" name="non" onclick="transfertNon()">
+            <input type="hidden" value="0" name="val" id ="val">
+        </form>
+        <script src="text.js"></script>
+    </body>
+</html>

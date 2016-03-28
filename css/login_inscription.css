@@ -1,0 +1,100 @@
+body {
+    font-size: 20px;
+    font-family: "Trebuchet MS", Trebuchet, sans-serif;
+}
+
+div {
+    color: #424242;
+    background-color: #EEEEEE;
+    height: 550px;
+    width: 600px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 3em;
+    border: 10px solid #EEEEEE;
+    box-shadow: 0px 0px 20px 0px #212121;
+}
+
+form {
+    padding: 20px 10px;
+}
+
+h1 {
+    padding: 10px;
+    color: #EEEEEE;
+    background-color: #3F51B5;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+input {
+    display: block;
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+input:focus {
+    background-color: #E8EAF6;
+    border: 2px solid #9FA8DA;
+}
+
+input[type="submit"] {
+    font-family: inherit;
+    color: inherit;
+    text-transform: uppercase;
+    border: 2px solid #3F51B5;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    margin-left: auto;
+    margin-right: 0;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #3F51B5;
+    color: #EEEEEE;
+}
+
+input[type="submit"]:active {
+    border: 2px solid #283593;
+    background-color: #283593;
+    color: #EEEEEE;
+}
+
+a:link, a:visited {
+    display: block;
+    text-align: center;
+    color: #424242;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid #3F51B5;
+    width: 146px;
+    line-height: 46px;
+    position: relative;
+    margin-left: auto;
+    margin-right: 0;
+    cursor: pointer;
+}
+
+a:hover {
+    background-color: #3F51B5;
+    color: #EEEEEE;
+}
+
+a:active {
+    border: 2px solid #283593;
+    background-color: #283593;
+    color: #EEEEEE;
+}
+
+#message {
+    padding: 10px;
+    background-color: #FFCDD2;
+    /*border: 1px solid #EF5350;*/
+    color: #C62828;
+}
+
+#message:empty {
+    background-color: #EEEEEE;
+}

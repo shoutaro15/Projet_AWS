@@ -1,0 +1,11 @@
+body {
+    font-size: 20px;
+    font-family: "Trebuchet MS", Trebuchet, sans-serif;
+}
+
+#conteneur p {
+    padding: 10px;
+    background-color: #C5CAE9;
+    border: 1px solid #303F9F;
+    color: #212121;
+}
